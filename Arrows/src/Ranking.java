@@ -1,5 +1,3 @@
-// String name = "Ming Gao";
-// String date = "1/25/22";
 // Purpose: to rank highscores
 
 import java.util.Calendar;
