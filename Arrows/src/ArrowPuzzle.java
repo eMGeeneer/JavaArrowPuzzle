@@ -392,19 +392,19 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			g.setColor(Color.BLACK);
 			for (byte i = 0; i < 2; i++) {
 				g.drawOval(139 + i * 428, 168, 101, 101);
-				drawArrow(g, i, (byte) 6, 189 + i * 428, 218);
+				drawArrow(g, i, 6, 189 + i * 428, 218);
 				g.drawOval(139 + i * 428, 38, 101, 101);
-				drawArrow(g, i, (byte) 6, 189 + i * 428, 88);
+				drawArrow(g, i, 6, 189 + i * 428, 88);
 				g.drawOval(252 + i * 428, 103, 101, 101);
-				drawArrow(g, i, (byte) 6, 302 + i * 428, 153);
+				drawArrow(g, i, 6, 302 + i * 428, 153);
 				g.drawOval(252 + i * 428, 233, 101, 101);
-				drawArrow(g, i, (byte) 6, 302 + i * 428, 283);
+				drawArrow(g, i, 6, 302 + i * 428, 283);
 				g.drawOval(139 + i * 428, 298, 101, 101);
-				drawArrow(g, i, (byte) 6, 189 + i * 428, 348);
+				drawArrow(g, i, 6, 189 + i * 428, 348);
 				g.drawOval(26 + i * 428, 233, 101, 101);
-				drawArrow(g, i, (byte) 6, 76 + i * 428, 283);
+				drawArrow(g, i, 6, 76 + i * 428, 283);
 				g.drawOval(26 + i * 428, 103, 101, 101);
-				drawArrow(g, i, (byte) 6, 76 + i * 428, 153);
+				drawArrow(g, i, 6, 76 + i * 428, 153);
 			}
 			
 			for (byte i = 0; i < 2; i++) {
@@ -512,38 +512,38 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	public void actionPerformed(ActionEvent e) {
 		String eName = e.getActionCommand();
 
-		if (eName.equals("square")) {
+		switch (eName) {
+		case "square":
 			screen = 1;
 			screen();
-		}
-		else if (eName.equals("hex")) {
+			break;
+		case "hex":
 			screen = 3;
 			screen();
-		}
-		else if (eName.equals("instruct")) {
+			break;
+		case "instruct":
 			screen = 5;
 			screen();
-		}
-		else if (eName.equals("lead")) {
+			break;
+		case "lead":
 			screen = 6;
 			screen();
-		}
-		else if (eName.equals("exit")) {
+			break;
+		case "exit":
 			System.exit(1);
-		}
-		else if (eName.equals("d2")) {
+		case "d2":
 			d = 2;
 			screen();
-		}
-		else if (eName.equals("d4")) {
+			break;
+		case "d4":
 			d = 4;
 			screen();
-		}
-		else if (eName.equals("d6")) {
+			break;
+		case "d6":
 			d = 6;
 			screen();
-		}
-		else if (eName.equals("sqConfirm")) {
+			break;
+		case "sqConfirm":
 			screen = 2;
 			game = "sq";
 			timer = System.currentTimeMillis();
@@ -575,8 +575,8 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 					}
 				}
 			} while (sq.hint()[2] == 0);
-		}
-		else if (eName.equals("hexConfirm")) {
+			break;
+		case "hexConfirm":
 			screen = 4;
 			game = "hex";
 			timer = System.currentTimeMillis();
@@ -619,16 +619,16 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 					}
 				}
 			} while (h.hint()[2] == 0);
-		}
-		else if (eName.equals("back")) {
+			break;
+		case "back":
 			if (!win) {
 				screen = 0;
 				screen();
 				suffer = false;
 				frame.setResizable(false);
 			}
-		}
-		else if (eName.equals("hHint")) {
+			break;
+		case "hHint":
 			if (!win) {
 				timer -= 10000;
 				if (hint[2] == 0) {
@@ -642,8 +642,8 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 					timer -= 10000;
 				}
 			}
-		}
-		else if (eName.equals("sqHint")) {
+			break;
+		case "sqHint":
 			if (!win) {
 				timer -= 10000;
 				if (hint[2] == 0) {
@@ -657,13 +657,13 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 					timer -= 10000;
 				}
 			}
-		}
-		else if (eName.equals("sqShape")) {
+			break;
+		case "sqShape":
 			game = "sq";
 			d = d == 6 ? (byte) 4 : d;
 			screen();
-		}
-		else if (eName.equals("hShape")) {
+			break;
+		case "hShape":
 			game = "hex";
 			d = d == 4 ? (byte) 6 : d;
 			screen();
@@ -743,12 +743,12 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	// @param maxDir The number of directions the arrow can face
 	// @param x The x coordinate
 	// @param y The y coordinate
-	public void drawArrow(Graphics g, int dir, byte maxDir, int x, int y) {
+	public void drawArrow(Graphics g, int dir, int i, int x, int y) {
 		if (dir == 0) {
 			g.drawLine(x, y - 11, x - 39, y + 11);
 			g.drawLine(x, y - 11, x + 39, y + 11);
 		}
-		else if (maxDir == 6) {
+		else if (i == 6) {
 			if (dir == 1) {
 				g.drawLine(x + 10, y - 5, x - 29, y - 28);
 				g.drawLine(x + 10, y - 5, x + 10, y + 40);
@@ -770,7 +770,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 				g.drawLine(x - 10, y - 5, x - 10, y + 40);
 			}
 		}
-		else if (maxDir == 4) {
+		else if (i == 4) {
 			if (dir == 1) {
 				g.drawLine(x + 11, y, x - 11, y + 39);
 				g.drawLine(x + 11, y, x - 11, y - 39);
