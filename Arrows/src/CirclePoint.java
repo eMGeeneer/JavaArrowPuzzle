@@ -19,7 +19,7 @@ public class CirclePoint {
 	}
 	
 	public static void setGridType(boolean b) {
-		gridType = b;
+		gridType = b; // false for hexagonal grid and true for square grid
 	}
 	
 	// returns if two points are within 51 pixels of each other
