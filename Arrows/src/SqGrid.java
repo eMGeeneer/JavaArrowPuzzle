@@ -4,10 +4,10 @@
 
 public class SqGrid {
 	private byte dir;
-	private byte[][] grid;
+	private int[][] grid;
 	
 	public SqGrid(int n, byte d) {
-		grid = new byte[n][n];
+		grid = new int[n][n];
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				grid[i][j] = 0;
@@ -23,7 +23,7 @@ public class SqGrid {
 	public boolean press(int x, int y) {
 		for (int i = 0; i < 9; i++) {
 			if (x + (i % 3) - 1 >= 0 && x + (i % 3) - 1 < grid.length && y + (i / 3) - 1 >= 0 && y + (i / 3) - 1 < grid.length) {
-				grid[x + (i % 3) - 1][y + (i / 3) - 1] = (byte) ((grid[x + (i % 3) - 1][y + (i / 3) - 1] + 1) % dir);
+				grid[x + (i % 3) - 1][y + (i / 3) - 1] = (grid[x + (i % 3) - 1][y + (i / 3) - 1] + 1) % dir;
 			}
 		}
 		for (int i = 1; i < grid.length - 1; i++) {
@@ -36,7 +36,7 @@ public class SqGrid {
 		return true;
 	}
 	
-	public byte[][] getGrid() {
+	public int[][] getGrid() {
 		return grid;
 	}
 	
