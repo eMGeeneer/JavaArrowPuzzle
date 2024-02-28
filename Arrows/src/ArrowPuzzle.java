@@ -247,7 +247,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	// graphics class
 	public class ArrowPanel extends JPanel {
 		public int[][] hGrid = h.getGrid();
-		public byte[][] sqGrid = sq.getGrid(); 
+		public int[][] sqGrid = sq.getGrid(); 
 
 		// draws the game screen
 		// @param g Graphics
