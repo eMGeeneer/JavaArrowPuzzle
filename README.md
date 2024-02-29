@@ -1,2 +1,5 @@
 Arrow Puzzle from Idle Exponential
-Created for a school project
+
+The game has two modes: one with a hexagonal grid, and one with a square grid.
+
+
