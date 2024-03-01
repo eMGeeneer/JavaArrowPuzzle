@@ -32,4 +32,4 @@ The indices increment going around the hexagon in a clockwise fashion.
 
 ### THe hint system
 
-The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would $\simeq + O(3n^2)$ while adding an extra ring is only $ + O(6n)$
+The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would $\simeq + O(3n^2)$ while adding an extra ring is only $+ O(6n)$
