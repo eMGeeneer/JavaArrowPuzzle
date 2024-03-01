@@ -12,7 +12,7 @@ Clicking a circle will rotate all adjacent circles as well as itself
 
 A hint button is available at the bottom of the screen which will locate a circle and display the number of times it needs to be rotated.
 Each hint adds 10 seconds to the timer.
-Clicking the hint button while a hint is already being displayed will add 20 seconds to the timer. It will also create a pop up that prevents interaction with the game until it is dismissed.
+Clicking the hint button while a hint is already being displayed will add 20 seconds to the timer. It will also create a pop-up that prevents interaction with the game until it is dismissed.
 
 ![7 circles in a hex grid are in the 8:00 position with a hint above the central circle displaying the number 2](Hint.PNG)
 
@@ -25,6 +25,11 @@ There is no button to turn the music off, it is meant to be an added challenge t
 ## How the code works:
 
 ### The hexagonal grid
+
 The hexagonal grid is stored as a 2d array of ints, similar to the square grid.
-However, the length of each array in the 2d array is equal to 6 * the index with the exception of the array at the 0 index which has a length of 1.
+However, the length of each array in the 2d array is equal to $6 \times$ the index with the exception of the array at the 0 index which has a length of 1.
 The indices increment going around the hexagon in a clockwise fashion.
+
+### THe hint system
+
+The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would double the number of integers 
