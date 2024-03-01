@@ -18,6 +18,8 @@ Clicking the hint button while a hint is already being displayed will add 20 sec
 
 There is no button to turn the music off, it is meant to be an added challenge to deal with.
 
+[Credits to Y8MD and DOVA-SYNDROME for the bgm](https://www.youtube.com/watch?v=bNBEgmsEXII)
+
 ## How the code works:
 
 ### The hexagonal grid
