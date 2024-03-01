@@ -417,7 +417,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			}
 			
 			for (int i = 0; i < 2; i++) {
-				drawArrow(g, 1, 4, 403, 218 + i * 410);
+				drawArrow(g, 1, 4, 403, 218 + i * 408);
 			}
 		}
 	}
