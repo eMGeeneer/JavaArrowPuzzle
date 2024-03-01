@@ -41,4 +41,4 @@ Because of the design of this hint system, hints are only necessary to solve the
 
 When directly inputting into the JTextBoxes and JSpinners (not using the arrows) pressing the `enter` key is necessary to confirm the input.
 
-![Neko]()
+![Neko](neko.jpg)
