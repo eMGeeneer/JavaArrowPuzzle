@@ -36,7 +36,7 @@ The size of a hexagonal grid is equal to the number of rings around the central 
 
 The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would $\sim + O(3n^2)$ in the hexagonal grid while adding an extra ring is only $+ O(6n)$. For the square grid is a difference of $\sim + O(\frac{1}{2}n^2)$ to $+ O(4n - 4)$.
 For the outermost ring, there is another invisible ring which is the cause of the extra memory. This ring can never be rotated directly so it can only be rotated by the ring directly below it.
-Because of the design of this hint system, hints are only necessary to solve the outermost ring as the lower rings can be solved with the outermost ring as a hint. This means that only a maximum of a $60 \times n$ second penalty is required to solve each hexagonal grid and a $40 \times n - 40$ second penalty is required for square grids where $n$ is the grid size.
+Because of the design of this hint system, hints are only necessary to solve the outermost ring as the lower rings can be solved with the outermost ring as a hint. This means that only a maximum of a $60n$ second penalty is required to solve each hexagonal grid and a $40n - 40$ second penalty is required for square grids where $n$ is the grid size.
 
 ### JTextBoxes and JSpinners
 
