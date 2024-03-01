@@ -3,6 +3,7 @@
 ## Instructions:
 
 The game has two modes: one with a hexagonal grid, and one with a square grid.
+Each mode will have a setting for the number of directions the arrows can have. This will be either 2 or the number of sides of the grid shape (4 for square grid and 6 for hexagonal grid).
 
 Clicking a circle will rotate all adjacent circles as well as itself
 
