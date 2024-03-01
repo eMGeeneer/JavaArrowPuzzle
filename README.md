@@ -12,6 +12,7 @@ Clicking a circle will rotate all adjacent circles as well as itself
 
 A hint button is available at the bottom of the screen which will locate a circle and display the number of times it needs to be rotated.
 Each hint adds 10 seconds to the timer.
+Clicking the hint button while a hint is already being displayed will add 20 seconds to the timer. It will also create a pop up that prevents interaction with the game until it is dismissed.
 
 ![7 circles in a hex grid are in the 8:00 position with a hint above the central circle displaying the number 2](Hint.PNG)
 
