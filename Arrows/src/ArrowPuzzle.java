@@ -1,3 +1,5 @@
+// String name = "Ming Gao";
+// String date = "1/25/22";
 // Purpose: to make the arrow puzzle from Exponential Idle
 
 import java.awt.BorderLayout;
@@ -54,8 +56,8 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	public static String game = "sq";
 	public static int[] hint = new int[3];
 	public static HashMap<CirclePoint, int[]> clickCircles;
-	public static HexGrid h = new HexGrid(3, (byte) 6);
-	public static SqGrid sq = new SqGrid(3, (byte) 4);
+	public static HexGrid h = new HexGrid(3, 6);
+	public static SqGrid sq = new SqGrid(3, 4);
 	public static Clip bgm;	
 	public final Font titleFont = new Font("Courier New", Font.BOLD, 72);
 	public final Font buttonFont = new Font("Courier New", Font.BOLD, 24);
@@ -409,13 +411,13 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 				for (int j = 0; j < 3; j++) {
 					for (int k = 0; k < 3; k++) {
 						g.drawOval(13 + j * 126 + i * 428, k * 126 + 448, 101, 101);
-						drawArrow(g, i, (byte) 4, 63 + j * 126 + i * 428, k * 126 + 498);
+						drawArrow(g, i, 4, 63 + j * 126 + i * 428, k * 126 + 498);
 					}
 				}
 			}
 			
 			for (int i = 0; i < 2; i++) {
-				drawArrow(g, (byte) 1, (byte) 4, 403, 218 + i * 428);
+				drawArrow(g, 1, 4, 403, 218 + i * 410);
 			}
 		}
 	}
@@ -432,19 +434,19 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			g.drawOval(132, 161, 115, 115);
 			g.setColor(Color.BLACK);
 			g.drawOval(139, 168, 101, 101);
-			drawArrow(g, (byte) 4, (byte) 6, 189, 218);
+			drawArrow(g, 4, 6, 189, 218);
 			g.drawOval(139, 38, 101, 101);
-			drawArrow(g, (byte) 4, (byte) 6, 189, 88);
+			drawArrow(g, 4, 6, 189, 88);
 			g.drawOval(252, 103, 101, 101);
-			drawArrow(g, (byte) 4, (byte) 6, 302, 153);
+			drawArrow(g, 4, 6, 302, 153);
 			g.drawOval(252, 233, 101, 101);
-			drawArrow(g, (byte) 4, (byte) 6, 302, 283);
+			drawArrow(g, 4, 6, 302, 283);
 			g.drawOval(139, 298, 101, 101);
-			drawArrow(g, (byte) 4, (byte) 6, 189, 348);
+			drawArrow(g, 4, 6, 189, 348);
 			g.drawOval(26, 233, 101, 101);
-			drawArrow(g, (byte) 4, (byte) 6, 76, 283);
+			drawArrow(g, 4, 6, 76, 283);
 			g.drawOval(26, 103, 101, 101);
-			drawArrow(g, (byte) 4, (byte) 6, 76, 153);
+			drawArrow(g, 4, 6, 76, 153);
 		}
 	}
 	
@@ -658,12 +660,12 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			break;
 		case "sqShape":
 			game = "sq";
-			d = d == 6 ? (byte) 4 : d;
+			d = d == 6 ? 4 : d;
 			screen();
 			break;
 		case "hShape":
 			game = "hex";
-			d = d == 4 ? (byte) 6 : d;
+			d = d == 4 ? 6 : d;
 			screen();
 		}
 	}
@@ -865,7 +867,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			add(panel);
 		}
 		else if (screen == 1) { // sqConfig
-			d = d == 6 ? (byte) 4 : d;
+			d = d == 6 ? 4 : d;
 			JPanel panel = new JPanel();
 			panel.setLayout(new BorderLayout());
 			panel.setBorder(BorderFactory.createEmptyBorder (40, 0, 0, 0));
@@ -993,7 +995,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			setPreferredSize(new Dimension(dw, dl));
 		}
 		else if (screen == 3) { // hexConfig
-			d = d == 4 ? (byte) 6 : d;
+			d = d == 4 ? 6 : d;
 			JPanel panel = new JPanel();
 			panel.setLayout(new BorderLayout());
 			panel.setBorder(BorderFactory.createEmptyBorder (40, 0, 0, 0));
