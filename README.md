@@ -27,9 +27,9 @@ There is no button to turn the music off, it is meant to be an added challenge t
 ### The hexagonal grid
 
 The hexagonal grid is stored as a 2d array of ints, similar to the square grid.
-However, the length of each array in the 2d array is equal to $6 \times$ the index with the exception of the array at the 0 index which has a length of 1.
+However, the length of each array in the 2d array is equal to $6 \times \text{index}$ with the exception of the array at the 0 index which has a length of 1.
 The indices increment going around the hexagon in a clockwise fashion.
 
 ### THe hint system
 
-The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would double the number of integers 
+The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would $\simeq + O(3n^2)$ while adding an extra ring is only $ + O(6n)$
