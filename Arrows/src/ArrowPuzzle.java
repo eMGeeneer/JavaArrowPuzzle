@@ -793,7 +793,8 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	// updates the screen and allows for the changing of screens
 	public void screen() {
 		removeAll();
-		if (screen == 0) { // main menu
+		switch (screen) {
+		case 0: { // main menu
 			win = false;
 			
 			setPreferredSize(new Dimension(960, 600));
@@ -865,8 +866,9 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			panel.add(exitPanel);
 
 			add(panel);
+			break;
 		}
-		else if (screen == 1) { // sqConfig
+		case 1: { // sqConfig
 			d = d == 6 ? 4 : d;
 			JPanel panel = new JPanel();
 			panel.setLayout(new BorderLayout());
@@ -944,8 +946,9 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 
 			panel.add(sizePanel, BorderLayout.CENTER);
 			add(panel);
+			break;
 		}
-		else if (screen == 2) { // sqGame
+		case 2: { // sqGame
 			l = n * 101 + (n + 1) * 25;
 			w = l;
 			int dl = l < Toolkit.getDefaultToolkit().getScreenSize().height - 180 ? l + 105: Toolkit.getDefaultToolkit().getScreenSize().height - 75;
@@ -993,8 +996,9 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			bgm.loop(bgm.LOOP_CONTINUOUSLY);
 
 			setPreferredSize(new Dimension(dw, dl));
+			break;
 		}
-		else if (screen == 3) { // hexConfig
+		case 3: { // hexConfig
 			d = d == 4 ? 6 : d;
 			JPanel panel = new JPanel();
 			panel.setLayout(new BorderLayout());
@@ -1072,8 +1076,9 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 
 			panel.add(sizePanel, BorderLayout.CENTER);
 			add(panel);
+			break;
 		}
-		else if (screen == 4) { // hexGame
+		case 4: { // hexGame
 			l = (2 * n + 1) * 87 + (n + 1) * 87;
 			w = (2 * n + 1) * 76 + (n + 1) * 75;
 			int dl = l < Toolkit.getDefaultToolkit().getScreenSize().height - 180 ? l + 105 : Toolkit.getDefaultToolkit().getScreenSize().height - 75;
@@ -1121,8 +1126,9 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			bgm.loop(bgm.LOOP_CONTINUOUSLY);
 
 			setPreferredSize(new Dimension(dw, dl));
+			break;
 		}
-		else if (screen == 5) { // instructions
+		case 5: { // instructions
 			setLayout(new BorderLayout());
 			
 			JPanel panel = new JPanel();
@@ -1173,8 +1179,9 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			JScrollPane scroll = new JScrollPane(panel);
 			scroll.getVerticalScrollBar().setUnitIncrement(20);
 			add(scroll, BorderLayout.CENTER);
+			break;
 		}
-		else if (screen == 6) { // leaderboard
+		case 6: { // leaderboard
 			setLayout(new BorderLayout());
 			setBorder(BorderFactory.createEmptyBorder (10, 0, 0, 0));
 			
@@ -1288,6 +1295,8 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 			backPanel.add(back);
 			
 			add(backPanel, BorderLayout.SOUTH);
+			break;
+		}
 		}
 		repaint();
 		frame.setVisible(true);
