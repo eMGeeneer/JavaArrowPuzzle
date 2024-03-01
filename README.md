@@ -29,7 +29,10 @@ There is no button to turn the music off, it is meant to be an added challenge t
 The hexagonal grid is stored as a 2d array of ints, similar to the square grid.
 However, the length of each array in the 2d array is equal to $6 \times \text{index}$ with the exception of the array at the 0 index which has a length of 1.
 The indices increment going around the hexagon in a clockwise fashion.
+The size of a hexagonal grid is equal to the number of rings around the central circle. 
 
-### THe hint system
+### The hint system
 
-The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would $\simeq + O(3n^2)$ while adding an extra ring is only $+ O(6n)$
+The hint system works by starting the the outer most rings and reading the values to the determine how many times the indices in the lower ring have been rotated. This is more memory efficient than storing the number of times each circle has been rotated as that would $\simeq + O(3n^2)$ while adding an extra ring is only $+ O(6n)$.
+For the outermost ring, there is another invisible ring which is the cause of the extra memory. This ring can never be rotated directly so it can only be rotated by the ring directly below it.
+Because of the design of this hint system, hints are only necessary to solve the outermost ring as the lower rings can be solved with the outermost ring as a hint. This means that only a maximum of a $60 \times n$ second penalty is required to solve each hexagonal grid and a $4 \times n - 4$ penalty is required for square grids where n is the grid size.
