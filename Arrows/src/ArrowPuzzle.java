@@ -75,6 +75,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	}
 
 	// graphics class
+	// used to enter a name into the leaderboard
 	public class EnterName extends JPanel implements ActionListener, Runnable {
 		public boolean done = false;
 		public JFrame nameFrame;
@@ -120,6 +121,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 		}
 
 		// graphics class
+		// used to give an error pop-up if a name is not entered
 		public class NameError extends JPanel implements ActionListener, Runnable {
 			public JFrame errFrame;
 
@@ -247,6 +249,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	}
 
 	// graphics class
+	// the game screen
 	public class ArrowPanel extends JPanel {
 		public int[][] hGrid = h.getGrid();
 		public int[][] sqGrid = sq.getGrid(); 
@@ -323,6 +326,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	}
 
 	// graphics class
+	// a small screen where the grid be can previewed
 	public class PreviewPanel extends JPanel {
 		
 		// draws the preview screen
@@ -353,6 +357,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	}
 
 	// graphics class
+	// displays the timer
 	public class TimePanel extends JPanel implements Runnable {
 		
 		// draws the timer
@@ -380,6 +385,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	}
 
 	// graphics class
+	// demonstrates how the arrows are rotated
 	public class DemoPanel extends JPanel {
 		
 		// draws the demo screen
@@ -423,6 +429,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	}
 
 	// graphics class
+	// demonstrates the hint system is displayed
 	public class HintDemoPanel extends JPanel {
 		
 		// draws the hint demo screen
@@ -451,6 +458,7 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 	}
 	
 	// graphics class
+	// annyoing pop-up if the hint button is pressed while a hint is being displayed
 	public class HintError extends JFrame implements ActionListener, Runnable{
 		public JFrame hErrFrame;
 		
