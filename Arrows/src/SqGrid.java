@@ -1,10 +1,12 @@
+// String name = "Ming Gao";
+// String date = "1/25/22";
 // Purpose: to make the square grid
 
 public class SqGrid {
-	private byte dir;
+	private int dir;
 	private int[][] grid;
 	
-	public SqGrid(int n, byte d) {
+	public SqGrid(int n, int d) {
 		grid = new int[n][n];
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
