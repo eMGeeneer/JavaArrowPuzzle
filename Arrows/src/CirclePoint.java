@@ -32,7 +32,7 @@ public class CirclePoint {
 	public int hashCode() {
 		if (gridType) {
 			return (x - c[0]) / 126 * 1000 + (y - c[1]) / 126;
-		}
+		} // Shifts every other column up by half of a grid size to match the hexagonal grid
 		return (x - c[0]) / 151 * 1000 + (y - c[1] + Math.abs((x - c[0]) / 151) % 2 * 75) / 151;
 	}
 }
