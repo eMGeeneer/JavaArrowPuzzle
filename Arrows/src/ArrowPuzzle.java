@@ -20,9 +20,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.TreeSet;
+import java.util.PriorityQueue;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -197,17 +196,17 @@ public class ArrowPuzzle extends JPanel implements ActionListener, ChangeListene
 					BufferedReader input = new BufferedReader(new FileReader(leaderBoard));
 					try {
 						int numEntries = Integer.parseInt(input.readLine());
-						TreeSet<Ranking> entry = new TreeSet<Ranking> ();
+						PriorityQueue<Ranking> entries = new PriorityQueue<Ranking> ();
 						for (int i = 0; i < numEntries; i++) {
 							String line = input.readLine();
-							entry.add(new Ranking(line.substring(0, 16).trim(), Long.parseLong(line.substring(17, line.lastIndexOf(' '))), Long.parseLong(line.substring(line.lastIndexOf(' ') + 1))));
+							entries.add(new Ranking(line.substring(0, 16).trim(), Long.parseLong(line.substring(17, line.lastIndexOf(' '))), Long.parseLong(line.substring(line.lastIndexOf(' ') + 1))));
 						}
 						input.close();
-						entry.add(newRank);
+						entries.add(newRank);
 
 						PrintWriter outFile = new PrintWriter(new FileWriter(leaderBoard));
 						outFile.println(numEntries + 1);
-						for (Ranking rank : entry) {
+						for (Ranking rank : entries) {
 							outFile.println(rank.fileString());
 						}
 						outFile.close();
