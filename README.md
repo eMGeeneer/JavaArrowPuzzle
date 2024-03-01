@@ -20,6 +20,8 @@ There is no button to turn the music off, it is meant to be an added challenge t
 
 [Credits to Y8MD and DOVA-SYNDROME for the bgm](https://www.youtube.com/watch?v=bNBEgmsEXII)
 
+[baqua](baqua.jpg)
+
 ## How the code works:
 
 ### The hexagonal grid
