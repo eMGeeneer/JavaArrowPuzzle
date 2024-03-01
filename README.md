@@ -1,4 +1,4 @@
-# Arrow Puzzle from Idle Exponential
+# Arrow Puzzle from [Idle Exponential](https://conicgames.github.io/exponentialidle/)
 
 ## Instructions:
 
