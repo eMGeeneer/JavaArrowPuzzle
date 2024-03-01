@@ -1,10 +1,12 @@
+// String name = "Ming Gao";
+// String date = "1/25/22";
 // Purpose: to make the hexagonal grid
 
 public class HexGrid {
-	private byte dir;
+	private int dir;
 	private int[][] grid;
 	
-	public HexGrid(int n, byte d) {
+	public HexGrid(int n, int d) {
 		grid = new int[n + 1][];
 		int[] r = new int[1];
 		grid[0] = r;
