@@ -1,5 +1,3 @@
-// String name = "Ming Gao";
-// String date = "1/25/22";
 // Purpose: to make the arrow puzzle from Exponential Idle
 
 import java.awt.BorderLayout;
