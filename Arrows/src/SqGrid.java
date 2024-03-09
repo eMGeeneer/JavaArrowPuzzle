@@ -1,5 +1,3 @@
-// String name = "Ming Gao";
-// String date = "1/25/22";
 // Purpose: to make the square grid
 
 public class SqGrid {
